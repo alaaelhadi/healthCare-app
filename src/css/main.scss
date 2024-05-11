@@ -1,0 +1,99 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$primary: #14967F;
+$secondary: #2F6E7E;
+$lightGrey: #D3D3D3;
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+// Then add additional custom code here
+
+// GLOBAL
+@mixin customContainer() {
+    width: 80%;
+}
+// HEADER
+header {
+    width: 100%;
+    border-bottom: 1px solid $lightGrey;
+}
+.logo {
+    width: 7rem;
+}
+.logo img {
+    width: 100%;
+}
+.header-btn a {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 5.5rem
+    }
+    .header-btn a {
+        font-size: 1rem
+    }
+}
+
+// LOGIN & SIGNUP PAGE
+.container {
+    @include customContainer();
+}
+.login-sinup-btns .nav {
+    width: 100%;
+}
+.btn-wrapper {
+    width: 48%;
+}
+.btn-wrapper .nav-item {
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+.login-form {
+    display: none;
+}
+.signup-form {
+    display: block;
+}
+.login-form, .signup-form {
+    border: 1px solid $primary;
+    border-radius: 1rem;
+    padding: 5%;
+}
+.other-input {
+    display: none;
+}
+
+.error {
+    color: #dc3545; 
+    display: none;
+    padding: 2% 0;
+}
+.success {
+    color: #28a745; 
+    display: none;
+}
+.is-invalid {
+    border-color: #dc3545 !important; 
+}
+
+@media (max-width: 768px) {
+    .login-btn a, .signup-btn a {
+        font-size: 1.3rem;
+    }
+    .btn-wrapper {
+        width: 80%;
+    }
+    .country-row #country {
+        margin-bottom: 1.5rem;
+    }
+    .login-form, .signup-form {
+        padding: 10%;
+    }
+}
